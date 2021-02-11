@@ -1,11 +1,11 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component, Fragment } from 'react';
 import {
     Button,
     TextField,
     Dialog,
     DialogContent,
     DialogTitle
-} from '@material-ui/core'
+} from '@material-ui/core';
 
 class AddCar extends Component {
     state = {
@@ -30,8 +30,8 @@ class AddCar extends Component {
         payload.id = this.props.carTotal + 1
         delete payload.open
         console.log("THE CAR", payload)
-        // add this.props.addCar function here
-        // also add this.setState to close the dialog
+        this.props.addCar(payload)
+        this.setState({ open: false })
     }
 
     componentDidUpdate = (prevProps, prevState) => {
@@ -98,6 +98,6 @@ class AddCar extends Component {
             </Fragment>
         )
     }
-}
+};
 
-export default AddCar
+export default AddCar;
